@@ -1,0 +1,17 @@
+Variable,Description
+q_max,maximum daily discharge during 4 weeks prior to sampling
+q_min,minimum daily discharge during 4 weeks prior to sampling
+q_base,annual median of daily discharge
+F.Threshold,daily discharge exceeding 10*q_base
+D.Threshold,More than 7 contiguous daily discharges below the annual 25th percentile of daily discharge
+F.Magnitude,(q_max-q_base) / q_base
+D.Magnitude,(q_min-q_base) / q_base
+F.Duration,Contiguous days from the date of q_max to the first day under the F.Threshold
+D.Duration,Contiguous days from the date of q_min to the first day over the 25th percentile of daily discharge
+Rain.Month,Rain of the month prior to sampling
+Rain.30yr,Annual average rainfall
+Abundance,Log Response Ratio (LRR) of fish individuals per square meter
+Biomass,LRR of fish mass per square meter
+Sp.Richness,LRR of the number of unique species
+SW.Index,LRR of Shannon-Weiner Index; measures fish species diversity and evenness
+Centroid.Dist,LRR of the euclidean distance to the site centroied from constrained RDA; measures community compositional deviation from the study average
