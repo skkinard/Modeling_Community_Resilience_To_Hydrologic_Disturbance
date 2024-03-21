@@ -6,10 +6,10 @@
 #------------------------------------------------------------------------------
 # Setup
 #------------------------------------------------------------------------------
-source('exploration/toolkit.R') # load packages and helper-functions
+library(tidyverse)
 
-my_scripts <- list.files("exploration/calculation")
-my_scripts <- my_scripts[str_detect(my_scripts,"environment", negate=F)]
+my_scripts <- list.files("04_data_prep/isotope_chon")
+my_scripts <- my_scripts[str_detect(my_scripts,"\\.R", negate=F)]
 my_scripts <- my_scripts[str_detect(my_scripts,"update", negate=T)]
 my_scripts <- sort(my_scripts, decreasing=F)
 
@@ -17,10 +17,10 @@ my_scripts <- sort(my_scripts, decreasing=F)
 # Source scripts
 #------------------------------------------------------------------------------
 for(i in 1:length(my_scripts)) {
-  source(paste("exploration/calculation/", my_scripts[i], sep=''))
+  source(paste("04_data_prep/isotope_chon/", my_scripts[i], sep=''))
   rm(list=ls())
-  my_scripts <- list.files("exploration/calculation")
-  my_scripts <- my_scripts[str_detect(my_scripts,"environment", negate=F)]
+  my_scripts <- list.files("04_data_prep/isotope_chon")
+  my_scripts <- my_scripts[str_detect(my_scripts,"\\.R", negate=F)]
   my_scripts <- my_scripts[str_detect(my_scripts,"update", negate=T)]
   my_scripts <- sort(my_scripts, decreasing=F)   }
 
